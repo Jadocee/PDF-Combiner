@@ -120,7 +120,6 @@ public class PDFCombiner {
     }
 
     public void combine() throws IOException {
-        System.out.println(output.toString());
         final PDFMergerUtility pdfMergerUtility = new PDFMergerUtility();
         System.out.println("Saving to " + output.toString());
         pdfMergerUtility.setDestinationFileName(output.toString());
