@@ -122,16 +122,14 @@ public class PDFCombiner {
     public void combine() throws IOException {
         System.out.println(output.toString());
         final PDFMergerUtility pdfMergerUtility = new PDFMergerUtility();
+        System.out.println("Saving to " + output.toString());
         pdfMergerUtility.setDestinationFileName(output.toString());
-        System.out.println(pdfMergerUtility.getDestinationFileName());
-
         scanInput();
         for (final File file : sources) {
             openList.add(PDDocument.load(file));
             pdfMergerUtility.addSource(file);
         }
         pdfMergerUtility.mergeDocuments(null);
-        System.out.println(pdfMergerUtility.getDestinationFileName());
         closeOpened();
     }
 }
